@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="no-js" lang="EN">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="css/landing_page.css">
+
+  <meta name="theme-color" content="#144F96">
+</head>
+
+<template id="collapsible-content">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    :host {
+      transition: all 300ms ease-in
+    }
+
+    :host * {
+      transition: all 300ms ease-in
+    }
+
+    :host([collapsed]) .content-wrapper {
+      max-height: 1px;
+    }
+
+    :host([collapsed]) .content-wrapper > * {
+      max-height: 1px;
+    }
+
+    .content-wrapper {
+      gap: inherit;
+      transition: all 300ms ease-in;
+    }
+
+    .content-wrapper * {
+      transition: all 300ms ease-in;
+    }
+
+    .collapsible-tilda {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-items: center;
+      justify-content: center;
+      background: transparent;
+      position: relative;
+      outline: none;
+      border: none;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .collapsible-tilda:before {
+      width: 1.5px;
+      height: 0;
+      transition: all 300ms;
+      background: var(--black-color);
+    }
+
+    :host([collapsed]) .collapsible-tilda:before {
+      height: 16px;
+    }
+
+
+    .collapsible-tilda:before, .collapsible-tilda:after {
+      content: "";
+      position: absolute;
+      background: var(--black-color);
+      border-radius: 2px;
+    }
+
+    .collapsible-tilda:after {
+      width: 16px;
+      height: 1.5px;
+      background: var(--black-color);
+    }
+  </style>
+
+  <header class="collapsible" data-flex-row data-flex-space-between>
+    <slot name="header-place"></slot>
+    <slot name="collapsible-action" onclick=event.target.offsetParent.toggleCollapsedContent()>
+      <button class="collapsible-tilda"></button>
+    </slot>
+  </header>
+  <section class="content-wrapper" data-flex-column>
+    <slot name="collapsible-content"></slot>
+    <slot></slot>
+  </section>
+</template>
+
+
+<body id="landing-page-body">
+<header class="accent-background container" data-flex-row data-flex-space-between data-flex-nowrap>
+  <div class="icon-container" data-flex-row>
+    <img src="img/Logo.svg" alt="PepsiCo logo" onload=parseSVG(this) data-logo loading="lazy"/>
+    <p>PepsiCo Climate Impact Map</p>
+  </div>
+  <nav data-flex-row data-flex-nowrap>
+    <a href="" class="no-text-decoration hover-line">Home Page</a>
+    <a href="" class="no-text-decoration hover-line">How to use</a>
+    <a href="" class="no-text-decoration hover-line">Methodology</a>
+  </nav>
+</header>
+<main>
+  <section id="accent-section" data-flex-column data-flex-space-between>
+    <img src="img/accent_img.jpg" alt="accent image">
+    <article data-flex-row data-flex-space-between>
+      <div data-flex-column>
+        <h1>Regenerative Agriculture and
+          <mark class="white-alpha20">Climate Resilience</mark>
+        </h1>
+        <h4 class="secondary-font-family no-bold">Under our Positive Agriculture agenda, PepsiCo endeavors to source
+          crops and ingredients in a way that accelerates regenerative agriculture and strengthens farming
+          communities.</h4>
+      </div>
+      <div data-flex-column>
+        <button class="accent-background oval">Go to map</button>
+      </div>
+    </article>
+  </section>
+  <section id="content-section">
+    <aside data-flex-column>
+      <h2>Climate Resilience</h2>
+      <ul>
+        <li is="bulleted-item">Climate change is impacting PepsiCo today</li>
+        <li is="bulleted-item">Positive Agriculture agenda drives climate resilient supply chains</li>
+        <li is="bulleted-item">How do Regenerative Agriculture practices enhance climate resilience?</li>
+        <li is="bulleted-item">Translating the latest science into actionable insights</li>
+      </ul>
+    </aside>
+    <article data-flex-column data-align-center class="gap-24">
+      <collapsible-content data-flex-column>
+        <h3 slot="header-place">Climate change is impacting PepsiCo today</h3>
+        <article data-flex-column data-flex-space-between class="gap-30">
+          <p>Climate change has already begun to adversely impact our business. Critical sourcing regions for the
+            agricultural products upon which we rely are increasingly subjected to extreme weather events, such as
+            droughts, floods, and heatwaves. These events not only exacerbate the existing strain on agricultural
+            systems, but also jeopardize sourcing strategies and impose additional costs.</p>
+          <p>To address climate related risks within our agricultural supply chains, it is imperative that we increase
+            climate resilience. We achieve this by working with farmers, implementation partners and suppliers to deploy
+            regenerative agricultural practices that both reduce greenhouse gas emissions to mitigate future climate
+            change as well as facilitate farmers’ adaptation to new climate conditions.</p>
+        </article>
+        <figure>
+          <img src="img/article_1.jpg" alt="article_1"/>
+        </figure>
+        <article data-flex-row data-flex-space-between class="gap-20">
+          <p>In India, the Agronomy team used this climate information in their Positive Agriculture plan for the potato
+            program. Confronted with a significant risk of extremely high water stress, the team set ambitious targets
+            centered on enhancing watershed and soil health. By 2025, they aim for targeted soil testing in 69% of
+            growing areas, incorporate High Efficiency Irrigation Systems in 19% of growing areas, and facilitate the
+            adoption of green manure and crop rotation in 10% of the growing areas.</p>
+          <p>
+            In South Africa, climate risks are being considered in the development of a Positive Agriculture strategy
+            through engagement with suppliers. In oats heat stress will be the primary factor limiting yields by 2030.
+            Consequently, farmers in irrigated farms are recommended to adjust their planting dates and nighttime
+            irrigation schedules to safeguard their crops. For rainfed farms, recommendations include the use of heat
+            tolerant varieties, combined with soil health management practices.
+          </p>
+        </article>
+      </collapsible-content>
+      <collapsible-content data-flex-column>
+        <h3 slot="header-place">Positive Agriculture agenda drives climate resilient supply chains</h3>
+        <article data-flex-column data-flex-space-between class="gap-32">
+          <p>The start of the Positive Ag journey is understanding the key risks and opportunities in the supply chain.</p>
+          <div>
+          <p>The information presented in this tool can assist with:</p>
+            <ul class="ml-8">
+              <li class="bullet-circle">Understanding key climate risks from extremes such as heat, flood, frost and drought per crop and geographical region by 2030</li>
+              <li class="bullet-circle">Inspiring Positive Ag plans based on priority practices that can reduce climate related risks</li>
+            </ul>
+          </div>
+          <p>This information serves to complement the insights from other assessments, e.g. the Cool Farm Tool, to devise a holistic Positive Ag strategy that achieves our objectives and safeguards the business against the impacts of climate change.</p>
+        </article>
+      </collapsible-content>
+      <collapsible-content data-flex-column>
+        <h3 slot="header-place">How do Regenerative Agriculture practices enhance climate resilience?</h3>
+        <figure>
+          <img src="img/article_2.jpg" alt="article_2"/>
+        </figure>
+        <section data-flex-column class="gap-32">
+        <article data-flex-row data-flex-space-between class="gap-20">
+          <p style="flex-basis: 50%">Regenerative Agriculture refers to a set of farming principles and practices aimed at enhancing natural resources, rather than depleting them. PepsiCo considers practices as ‘regenerative’ when they create measurable outcomes in at least two of five key impact areas:</p>
+          <div>
+            <ul>
+              <li class="bullet-circle">Carbon emission reduction and sequestration</li>
+              <li class="bullet-circle">Soil health</li>
+              <li class="bullet-circle">Enhanced biodiversity</li>
+              <li class="bullet-circle">Watershed health</li>
+              <li class="bullet-circle">Improved livelihoods</li>
+            </ul>
+          </div>
+        </article>
+          <h4 class="no-bold" style="max-width: 552px">Healthy soil serves as the foundation of regenerative agriculture and promotes climate resilience.</h4>
+        </section>
+        <article data-flex-row data-flex-space-between data-flex-same-width class="gap-20">
+          <p>Healthy soils retain and drain water more effectively, enabling farmers to withstand droughts and reduce the risk of waterlogging and erosion.</p>
+          <p>Regenerative Agriculture supports interdependencies between greenhouse gas removals and reductions, and collectively fosters soil health and resilience.</p>
+        </article>
+        <figure>
+          <img alt="vector_1" class="full-height" src="img/vector_1.png"/>
+        </figure>
+      </collapsible-content>
+      <collapsible-content data-flex-column>
+        <h3 slot="header-place">Translating the latest science into actionable insights</h3>
+        <article data-flex-row data-flex-same-width class="gap-24">
+          <p>In 2019, PepsiCo established a partnership with the <a href="https://alliancebioversityciat.org/" class="underlined xl">Alliance of Bioversity-CIAT</a> to create climate risk and opportunity intelligence specific to our business. We focused on downscaling to the geographies and timelines of relevance for business decision making, out to 2030. While relying on leading global climate data and models, this partnership combines our ambitious Positive Agriculture agenda and supply chain data with CIAT’s climate</p>
+          <p>and agriculture expertise,  for a first-time deep dive into the risks and opportunities for adaptation in the face of progressive climate change. As a result of understanding the local climate impacts and business case of investing in resilience, this tool enables development of Regen Ag plans that will also increase farm and supplier resilience to climate risk. Such shared value creates opportunities for large-scale partnerships.</p>
+        </article>
+        <figure>
+          <img alt="vector_2" class="full-height" src="img/vector_2.png"/>
+        </figure>
+        <article data-flex-column>
+          <p>Some of the partnerships already resulting from this work include:</p>
+          <ul class="ml-8">
+            <li class="bullet-circle no-flex"><a class="underlined xl" href="https://www.thai-german-cooperation.info/en_US/">GIZ Thailand:</a> We used climate intelligence to make the business case for action, securing an investment of $1.4 million over three years from the German government. This program helps to extend the Regen Ag practices promoted amongst potato farmer to their corn and rice rotation, enhancing resilience of nearly 3,000 farmers.</li>
+            <li class="bullet-circle no-flex"><a class="underlined xl" href="https://foundationfar.org/">Foundation for Food & Agriculture Research</a> (FFAR): PepsiCo and FFAR are investing in Regen Ag adoption through the Climate Resilient Agricultural call for proposals worth XX million USD. Project ideas that support farmers in adoption of risk-reducing practices over the next X years in X priority crops and X priority countries will be selected through a competitive process.</li>
+          </ul>
+        </article>
+        <strong class="half-strong mt20">Before you get started, please read the ‘How To Use’ page to understand how to interpret the information available through this tool.</strong>
+      </collapsible-content>
+    </article>
+  </section>
+</main>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    const imgTags = document.body.getElementsByTagName('img');
+    for (let item of imgTags) {
+      item.addEventListener('error', () => setImageFallback(item, 'img/placeholder_image.jpg'))
+    }
+  });
+</script>
+</body>
+
+</html>

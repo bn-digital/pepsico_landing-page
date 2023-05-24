@@ -1,0 +1,203 @@
+@import url(main.css);
+
+
+header {
+  padding-top: 40px;
+  padding-bottom: 22px;
+}
+
+header * {
+  color: var(--white-color);
+}
+
+header .icon-container {
+  gap: 10px;
+  align-items: center;
+}
+
+header nav {
+  gap: 48px;
+  align-items: center;
+}
+
+header nav a {
+  position: relative;
+  transition: all 300ms ease-in;
+}
+
+header nav a.hover-line:hover:after {
+  background-color: var(--white-color);
+}
+
+#accent-section {
+  height: 699px;
+  position: relative;
+  color: var(--white-color);
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(20,20,20,1) 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+#accent-section:before {
+  width: 100%;
+  height: 63px;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background-color: var(--white-color);
+  position: relative;
+  display: block;
+  margin-bottom: 0;
+  order: 3;
+}
+
+#accent-section:after {
+  content: "";
+  background-color: var(--white-color);
+  width: 50%;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  bottom: 63px;
+  border-top-left-radius: 2px;
+}
+
+
+#accent-section article {
+  max-width: 1174px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 167px;
+}
+
+#accent-section article div:first-child {
+  max-width: 610px;
+  width: 100%;
+  gap: 24px;
+}
+
+#accent-section article div:first-child h1 mark {
+  color: var(--white-color);
+}
+
+#accent-section article button.oval.accent-background {
+  width: 140px;
+  max-height: 140px;
+  height: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white-color);
+  text-transform: initial;
+  margin-bottom: 30px;
+  margin-top: auto;
+}
+
+button.accent-background {
+  transition: all 300ms ease-in;
+}
+
+button.accent-background:hover {
+  filter: brightness(0.7);
+}
+
+#accent-section img {
+  top: -104px;
+  z-index: -1;
+  content: "no";
+  object-fit: cover;
+  position: absolute;
+  max-width: 100vw;
+  width: 100%;
+  max-height: 803px;
+  height: auto;
+}
+
+#content-section {
+  display: grid;
+  grid-template-columns: 29.5vw 69.3vw;
+  max-width: 100vw;
+  width: 100%;
+}
+
+#content-section > article {
+  border-left: 1px solid var(--border-color);
+  padding-top: 72px;
+  padding-bottom: 138px;
+}
+
+#content-section > aside {
+  padding-top: 60px;
+  padding-right: 16px;
+  gap: 30px;
+  align-items: flex-end;
+}
+
+#content-section > aside h2 {
+  font-weight: 600;
+  color: var(--black-color);
+}
+
+#content-section > aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px
+}
+
+#content-section > aside * {
+  max-width: 288px;
+  width: 100%;
+}
+
+#content-section collapsible-content {
+  gap: 24px;
+  position: relative;
+  max-width: 796px;
+  width: 100%;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#content-section collapsible-content:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#content-section collapsible-content .collapsible {
+  max-width: 793px;
+  width: 100%
+}
+
+#content-section collapsible-content h3 {
+  font-weight: normal;
+  color: var(--black-color);
+  text-transform: capitalize;
+}
+
+#content-section collapsible-content figure img {
+  width: 100%;
+  height: 260px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+
+#content-section collapsible-content a.underlined{
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+#content-section collapsible-content figure img.full-height {
+  object-fit: contain;
+  height: auto;
+}
+
+#content-section collapsible-content .half-strong {
+  color: var(--black-color);
+}
+
+#content-section collapsible-content[collapsed] *:not(:first-child), #content-section collapsible-content[collapsed] *:not(:first-child) * {
+  max-height: 1px;
+  transform: translateY(-50vh);
+}

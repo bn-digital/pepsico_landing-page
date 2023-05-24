@@ -1,0 +1,181 @@
+:root {
+  --accent-color: #144F96;
+  --white-color: #FFFFFFFF;
+  --half-white-color: rgba(255, 255, 255, 0.5);
+  --black-color: #000000FF;
+  --half-black-color: #00000080;
+  --border-color: #e5e5e5;
+  --text-color: #4d4d4d;
+  --border-radius: 8px;
+  --container-width: 1324px;
+  --base-font: 'Commissioner', sans-serif;
+  --H1-font: 'Lato', sans-serif;
+  --secondary-font: 'Noto Sans', sans-serif;
+}
+
+
+*[data-flex-row] {
+  display: flex;
+  flex-direction: row;
+}
+
+*[data-flex-column] {
+  display: flex;
+  flex-direction: column;
+}
+
+*[data-flex-wrap] {
+  flex-wrap: wrap;
+}
+
+*[data-flex-nowrap] {
+  flex-wrap: nowrap;
+}
+
+*[data-flex-space-between] {
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+*[data-align-center] {
+  align-items: center;
+}
+
+*[data-flex-same-width] * {
+  flex: 1 1 0;
+}
+
+.accent-background {
+  background-color: var(--accent-color);
+}
+
+.secondary-font-family {
+  font-family: var(--secondary-font);
+}
+
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.hover-line:after {
+  content: "";
+  transition: all 300ms ease-in;
+  color: transparent;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+img.full-height {
+  height: 100%;
+}
+
+a.xl {
+  font-size: 16px;
+}
+
+.half-white {
+  background-color: var(--half-white-color);
+}
+
+.white-alpha20 {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.half-black {
+  background-color: var(--half-black-color);
+}
+
+.hover-line:hover:after {
+  background-color: inherit;
+}
+
+.no-bold {
+  font-weight: normal;
+}
+
+.half-strong {
+  font-weight: 500;
+}
+
+.oval {
+  padding: 40% 17.2%;
+  border-radius: 50%;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
+.gap-32 {
+  gap: 32px;
+}
+
+.ml-4 {
+  margin-left: 4px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+li[is="bulleted-item"] {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 14px;
+}
+
+li[is="bulleted-item"] svg:first-child {
+  flex-basis: fit-content;
+  padding: 4px;
+  transition: 300ms ease-in;
+}
+
+li[is="bulleted-item"] svg:first-child path {
+  fill: var(--accent-color);
+  transition: 300ms ease-in;
+}
+
+li[is="bulleted-item"]:hover {
+  color: var(--black-color);
+}
+
+li[is="bulleted-item"]:hover svg:first-child path {
+  fill: var(--black-color);
+}
+
+li.bullet-circle {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+li.bullet-circle.no-flex {
+  display: block;
+}
+
+li.bullet-circle:before {
+  content: "•";
+  position: relative;
+  order: 0;
+  color: inherit;
+  width: 6px;
+  height: auto;
+  margin-right: 6px;
+}
+
+@media (min-width: 1324px) {
+  .container, *[data-container] {
+    padding-left: calc(calc(100vw - var(--container-width)) / 2);
+    padding-right: calc(calc(100vw - var(--container-width)) / 2);
+  }
+}
