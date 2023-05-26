@@ -136,7 +136,8 @@ li[is="bulleted-item"] {
 
 li[is="bulleted-item"] svg:first-child {
   flex-basis: fit-content;
-  padding: 4px;
+  padding: 0;
+  box-sizing: border-box;
   transition: 300ms ease-in;
 }
 
@@ -177,5 +178,12 @@ li.bullet-circle:before {
   .container, *[data-container] {
     padding-left: calc(calc(100vw - var(--container-width)) / 2);
     padding-right: calc(calc(100vw - var(--container-width)) / 2);
+  }
+}
+
+@media (max-width: 1324px) {
+  .container, *[data-container] {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }

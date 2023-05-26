@@ -31,6 +31,10 @@
       transition: all 300ms ease-in
     }
 
+    :host([collapsed]) {
+      overflow: hidden;
+    }
+
     :host([collapsed]) .content-wrapper {
       max-height: 1px;
     }

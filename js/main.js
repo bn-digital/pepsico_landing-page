@@ -1,4 +1,3 @@
-const documentRules = document.styleSheets[document.styleSheets.length - 1].cssRules;
 const documentStyles = document.body ? window.getComputedStyle(document.body) : window.getComputedStyle(document.querySelector('body'))
 const accentColor = documentStyles.getPropertyValue('--accent-color')
 const parseSVG = (imgElement) => {
